@@ -19,8 +19,11 @@ function D(T, t) {
 let Ts = 20;
 let h = (180 - 200) / (50 * (20 - 200));
 
-console.log(ForwardEuler(D, 200, 5, 0, 50)[0]);
-
+let soln = ForwardEuler(D, 200, 5, 0, 50);
+console.log(soln[0][soln[0].length - 1]);
+for (i = 1; i < soln[1].length; i++) {
+    console.log(soln[1][i - 1], soln[0][i - 1], soln[1][i], soln[0][i]);
+}
 
 function setup() {
     createCanvas(400, 400);
@@ -49,3 +52,4 @@ function setup() {
 function draw() {
 //  background(220);
 }
+
